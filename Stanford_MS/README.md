@@ -1,0 +1,4 @@
+# Stanford MSCS Statement of Purpose
+
+Your Statement of Purpose should be concise, focused, and well-written. It should describe succinctly your reasons for applying to the proposed program at Stanford, your preparation for this field of study, research interests, future career plans, and other aspects of your background and interests which may aid the admissions committee in evaluating your aptitude and motivation for graduate study. The Statement of Purpose must be no more than two pages long, single-spaced. It will be submitted as part of the online application. *
+你的目标陈述应简洁、集中且写得很好。它应简要描述你申请斯坦福大学该项目的理由、你对该学习领域的准备情况、研究兴趣、未来职业计划，以及可能帮助招生委员会评估你研究生学习能力和动机的其他背景和兴趣方面。目标陈述不得超过两页，单倍行距。它将作为在线申请的一部分提交。*
