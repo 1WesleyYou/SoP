@@ -1,0 +1,80 @@
+% Community involvement and/or service 
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+
+\setlength{\parskip}{10pt}
+% \setlength{\parindent}{10pt}
+
+%  TODO: 注意这里的用词要符合论文风格, 专业名词这些
+
+% Linespread command allows you to change line spacing for the entire document
+\linespread{1.18}
+
+% Tweak page margins
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+
+\usepackage{natbib}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{xspace}
+\usepackage{fancyhdr}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\Hrule}{\rule{\linewidth}{0.3mm}}
+
+% Project specific macros
+\newcommand{\graphite}{GRAPHITE\xspace}
+\newcommand{\wave}{WAVE\xspace}
+
+% School specific macros
+\newcommand{\schoolShort}{UMD\xspace}
+\newcommand{\school}{University of Maryland\xspace}
+\newcommand{\schoolLong}{University of Maryland College Park\xspace}
+
+\newcommand{\profOne}{Prof. Ryan Huang\xspace}
+\newcommand{\profTwo}{Prof. Xiaonan Huang\xspace}
+\newcommand{\profThree}{Prof. Yutong Ban\xspace}
+
+% Creates header for each page
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\header\hskip\linepagesep\vfootline\thepage}
+\newskip\linepagesep \linepagesep 5pt\relax
+\def\vfootline{%
+    \begingroup
+    	\rule[-10pt]{0.75pt}{25pt}
+    \endgroup
+}
+\def\header{%
+	\begin{minipage}[]{120pt}
+		\hfill Yuchen You
+    	\par \hfill 				% Formatting boilerplate
+    	CS, PhD, Fall 2026 			% Area, Program, Cycle, Year
+    \end{minipage}
+}
+\fancyhead[RE,LO]{Personal History Statement | \schoolLong}
+\renewcommand\headrulewidth{0pt}
+
+\begin{document}
+
+\section*{Community Involvement and Service}
+
+Outside the classroom, I tried to carry the same mindset into community work. Through a volunteer program in Shanghai, I regularly visited a senior activity center in Putuo District, where many of the residents lived alone and had limited experience with smartphones. Our main task was to teach them how to use mobile apps and mini-programs to make hospital appointments, check registration numbers, and navigate online payment systems. At first, even basic actions---such as distinguishing between a pop-up ad and a system notification, or understanding why a verification code timeouts---felt overwhelming for many of them.
+
+Instead of simply ``doing it for them,'' I sat down one-on-one, walked through each step slowly, and encouraged them to try on their own while I stayed nearby. Between technical explanations, we also spent time just talking: about their families, their worries about getting timely medical care, and how rapidly the city had changed around them. Over time, I saw several seniors move from frustration to a quiet sense of independence when they could successfully book an appointment without asking their children or neighbors for help. This experience made the idea of the ``digital divide'' very tangible to me---access to technology is not only a matter of infrastructure, but also of patient guidance, trust, and emotional support---and deepened my conviction that technical systems should be designed and taught in ways that include, rather than unintentionally exclude, vulnerable groups. I hope to bring this perspective to my graduate studies by building systems that remain usable and accessible to a wide range of users.
+
+\end{document}

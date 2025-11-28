@@ -1,0 +1,80 @@
+% Overcoming social, economic, educational or physical barriers 
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+
+\setlength{\parskip}{10pt}
+% \setlength{\parindent}{10pt}
+
+%  TODO: 注意这里的用词要符合论文风格, 专业名词这些
+
+% Linespread command allows you to change line spacing for the entire document
+\linespread{1.18}
+
+% Tweak page margins
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+
+\usepackage{natbib}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{xspace}
+\usepackage{fancyhdr}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\Hrule}{\rule{\linewidth}{0.3mm}}
+
+% Project specific macros
+\newcommand{\graphite}{GRAPHITE\xspace}
+\newcommand{\wave}{WAVE\xspace}
+
+% School specific macros
+\newcommand{\schoolShort}{UMD\xspace}
+\newcommand{\school}{University of Maryland\xspace}
+\newcommand{\schoolLong}{University of Maryland College Park\xspace}
+
+\newcommand{\profOne}{Prof. Ryan Huang\xspace}
+\newcommand{\profTwo}{Prof. Xiaonan Huang\xspace}
+\newcommand{\profThree}{Prof. Yutong Ban\xspace}
+
+% Creates header for each page
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\header\hskip\linepagesep\vfootline\thepage}
+\newskip\linepagesep \linepagesep 5pt\relax
+\def\vfootline{%
+    \begingroup
+    	\rule[-10pt]{0.75pt}{25pt}
+    \endgroup
+}
+\def\header{%
+	\begin{minipage}[]{120pt}
+		\hfill Yuchen You
+    	\par \hfill 				% Formatting boilerplate
+    	CS, PhD, Fall 2026 			% Area, Program, Cycle, Year
+    \end{minipage}
+}
+\fancyhead[RE,LO]{Personal History Statement | \schoolLong}
+\renewcommand\headrulewidth{0pt}
+
+\begin{document}
+
+\section*{Overcoming Educational Barriers}
+
+One important test of my persistence came in EECS~482 (Introduction to Operating Systems). I initially treated it like any other demanding course, completing the projects without fully understanding the underlying ideas, and as a result I scored well below the class average on the first midterm. For a while I felt genuinely discouraged and wondered if I simply was not suited for systems.
+
+Instead of quietly giving up, I met with the instructor, Prof.\ Ryan Huang, who encouraged me to treat the course as research training: study a real operating systems textbook, revisit each concept carefully, and use the projects as a sandbox to ask ``what if'' questions and try small extensions. Following his advice, I changed my approach---systematically reviewing the material, designing and reasoning about potential optimizations, and regularly going to office hours to discuss design trade-offs rather than just fix bugs. My performance in the second half of the course improved sharply, and I finished with a final exam score well above the average. More importantly, I learned that when I hit a wall, I can respond not by lowering my ambitions, but by redesigning my strategy and seeking out help. This mindset---combining persistence with a willingness to change my approach---is one I will carry into graduate-level research, where confusion and setbacks are a natural part of making progress.
+
+\end{document}
