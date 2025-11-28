@@ -25,5 +25,24 @@ The following topics should be addressed in your  Academic Statement of Purpose.
 The Academic Statement of Purpose and the Personal History Statement are two of the most important documents in your graduate application. The documents should be concise, clear, and free of spelling, grammar, and punctuation errors. You should have others review your document for content, organization, and to ensure that there are no errors. Information in the Personal History Statement should complement but not duplicate information in the Academic Statement of Purpose.
 学术陈述和个人历史陈述是你研究生申请中最重要的文件。这些文件应简洁明了，无拼写、语法和标点错误。你应该请他人审阅你的文件，以检查内容、组织结构，并确保没有错误。个人历史陈述中的信息应与学术陈述中的信息相辅相成，但不应重复。
 
-Document Upload
-未选择任何文件
+## PS
+
+The Personal History Statement helps reviewers learn more about you as a whole person and as a potential graduate student. This may include relevant details on community service, leadership roles, participation in diverse teams, and significant barriers that you overcame to attend graduate school.
+个人历史陈述帮助评审者更全面地了解你，以及你作为潜在研究生的能力。这可能包括与社区服务、领导角色、参与多元化团队相关的详细信息，以及你克服重大障碍进入研究生院的经历。
+
+Required of all degree-seeking applicants:
+所有攻读学位申请人都必须满足以下要求：
+
+1.      Describe how your background and life experiences contribute to your ability to be both persistent and resourceful in graduate school.
+1.      描述你的背景和生活经历如何有助于你在研究生院保持坚持和资源丰富的能力。
+
+2.     Describe how your life experiences have prepared you to contribute to an academic community where scholars with diverse research interests, abilities, backgrounds, and experiences are supported, respected, and valued.
+2.     描述你的生活经历如何使你准备好为学术社区做出贡献，在这个社区里，具有不同研究兴趣、能力、背景和经历的研究者得到支持、尊重和重视。
+
+Optional:  可选：
+
+3.      Please address concerns that you may have that your academic record does not reflect your true capabilities and discuss mitigating factors that have affected your academic record. Reviewers will be interested in understanding your accomplishments relative to your opportunities.
+3.      请说明你可能在学术记录上未能反映真实能力的问题，并讨论影响你学术记录的缓解因素。评审者将对你相对于机会所取得的成就感兴趣。
+
+The Academic Statement of Purpose and the Personal History Statement are two of the most important documents in your graduate school application. The documents should be concise, clear, and free of spelling, grammar, and punctuation errors. You should have others review your document for content, organization, and to ensure that there are no errors. Information in the Personal History Statement should complement but not duplicate information in the Academic Statement of Purpose.
+学术陈述和个人历史陈述是研究生申请中最重要的文件之一。这些文件应简洁、清晰，且无拼写、语法和标点错误。你应该请他人审阅你的文件，以检查内容、组织结构，并确保没有错误。个人历史陈述中的信息应补充而非重复学术陈述中的信息。
