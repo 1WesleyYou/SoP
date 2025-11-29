@@ -1,0 +1,96 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{parskip}
+
+\singlespacing
+\setlength{\parskip}{5pt}
+% Linespread command allows you to change line spacing for the entire document
+% \linespread{1.18}
+
+% Tweak page margins
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+
+\usepackage{natbib}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{xspace}
+\usepackage{fancyhdr}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\Hrule}{\rule{\linewidth}{0.3mm}}
+
+% Project specific macros
+\newcommand{\graphite}{GRAPHITE\xspace}
+\newcommand{\wave}{WAVE\xspace}
+
+% School specific macros
+\newcommand{\schoolShort}{Duke\xspace}
+\newcommand{\school}{Duke University\xspace}
+\newcommand{\schoolLong}{Duke University\xspace}
+
+\newcommand{\profOne}{Prof. Ryan Huang\xspace}
+\newcommand{\profTwo}{Prof. Xiaonan Huang\xspace}
+\newcommand{\profThree}{Prof. Yutong Ban\xspace}
+
+% Creates header for each page
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\header\hskip\linepagesep\vfootline\thepage}
+\newskip\linepagesep \linepagesep 5pt\relax
+\def\vfootline{%
+    \begingroup
+    	\rule[-10pt]{0.75pt}{25pt}
+    \endgroup
+}
+\def\header{%
+	\begin{minipage}[]{120pt}
+		\hfill Yuchen You
+    	\par \hfill 				% Formatting boilerplate
+    	CS, PhD, Fall 2026 			% Area, Program, Cycle, Year
+    \end{minipage}
+}
+\fancyhead[RE,LO]{Statement of Purpose | \schoolLong}
+\renewcommand\headrulewidth{0pt}
+
+\begin{document}
+
+\textbf{Research Objectives.}
+My long-term goal is to help build \textbf{reliable and efficient infrastructure for large-scale machine learning and latency-sensitive services}. As models scale to thousands of accelerators and complex multi-tenant clusters, \textbf{gray failures} and performance anomalies become the norm rather than the exception. Unlike clean crash failures, these ``fail-slow'' behaviors quietly erode throughput and fairness. I am particularly interested in systems that can \textbf{detect and respond to such problems in real time}, using telemetry to drive adaptive runtime and scheduling decisions. This agenda is the main reason I am applying to the \textbf{Ph.D.\ program in Computer Science at Duke}.
+
+\textbf{Distributed Reliability and Agentic-DS-Ops.}
+My interest in distributed reliability has grown through my current \textbf{``agentic-ds-ops''} project with Prof.\ Ryan Huang at the University of Michigan. We started from a simple question: how can a \textbf{ZooKeeper-based coordination service} become more observable and automatically controllable in the presence of subtle performance faults? On CloudLab, I deployed ZooKeeper and HDFS clusters behind HAProxy, instrumented them with Prometheus, and injected gray failures using tools like ChaosBlade. This setup let us see how degradations show up in metrics, such as persistent queue buildup or unusual correlations between CPU and tail latency.
+
+Building on these observations, I implemented a \textbf{control loop} that monitors Prometheus metrics, flags potential gray failures, and triggers mitigation actions such as targeted restarts, traffic shifting, or configuration tweaks via ZooKeeper APIs. A central challenge was avoiding both over- and under-reaction, so I designed \textbf{windowed, percentile-based detectors} and tuned them on replayable fault scenarios. The project has taught me how sensitive distributed experiments are to details like clock skew or partial deployments, and how important it is to design experiments, logging, and dashboards as a coherent whole. It also confirmed that I enjoy this kind of \textbf{end-to-end systems work} enough to pursue it in a Ph.D.
+
+\textbf{CUDA Runtime for ML Systems.}
+In parallel, I have been exploring the intersection of systems and machine learning through a CUDA runtime project for \textbf{launch-bounded inference workloads}. Motivated by mixture-of-experts style models with variable shapes and batch sizes, I designed the \textbf{``CUDA Proxy Player''}, a runtime that exposes a single \texttt{InferenceRequest} API while internally routing each request to one of several execution paths: a baseline eager kernel path, a CUDA Graph path, or a persistent-kernel path backed by a device-side work queue. I implemented \textbf{shape-based bucketization} to reuse graphs and a \textbf{grid-stride persistent kernel} that pulls work from a lock-free ring buffer in device memory. Profiling overly aggressive designs---for example, instantiating too many graphs or launching oversized persistent kernels---forced me to refine my intuition for GPU limits. This project deepened my interest in \textbf{ML systems} by showing how modest runtime changes, informed by careful measurement, can significantly affect robustness and throughput.
+
+\textbf{Broadening Perspective: Edge and Robotics.}
+Beyond datacenter-style systems, I have worked on edge and robotics projects that broadened my perspective. In \textbf{``LightEMMA,''} an \textbf{edge--cloud collaborative vision-language model} pipeline for autonomous driving, we ran a compact Qwen-based model on a Jetson device and larger models in the cloud, exploring partitioning and compression strategies to keep latency within a driving-safe budget. Earlier, I spent several years on soft robotics, including an \textbf{origami-inspired soft robotic arm} platform that will appear in an ICRA 2025 workshop. I helped design control electronics and communication (e.g., CAN bus), implement low-level firmware, and integrate basic perception and control loops. Although my Ph.D.\ focus has shifted from robotics to core systems, these experiences trained me to think about constraints imposed by sensors, actuators, and hardware, an intuition I now apply to \textbf{accelerator- and latency-sensitive systems}.
+
+\textbf{Evolving Research Interests and Plans.}
+Coursework in \textbf{advanced operating systems, distributed systems, networks, and machine learning} has reinforced this trajectory, giving me foundations in consistency, isolation, and fault tolerance while exposing me to classic and modern systems designs. I am working to distill my ongoing projects into publishable work: the agentic-ds-ops project is evolving into a paper on gray failure detection and mitigation in coordination services, and the CUDA Proxy Player runtime is being extended to support more realistic mixture-of-experts serving benchmarks. Across these experiences, my research interests have converged on three related themes: \textbf{reliability and performance isolation} for core distributed infrastructure; \textbf{machine learning systems} for training and serving, especially launch-bounded and resource-constrained workloads; and \textbf{telemetry-driven automation} that uses noisy metrics to enable adaptive scheduling and configuration. In a Ph.D., I hope to explore systems that handle gray failures and workload variability more gracefully, combining robust designs with learning-based components that adapt to complex, changing environments. In the longer term, I would like to continue this line of work as a researcher in academia or an industrial lab.
+
+\textbf{Strengths and Areas for Growth.}
+Reflecting on my preparation, I see several strengths that I believe will serve me well in doctoral study. First, I bring a \textbf{cross-layer perspective}: my dual-degree background in mechanical engineering and computer science, and my projects spanning embedded robotics, edge devices, and datacenter systems, have trained me to reason from physical constraints up through distributed protocols and runtimes. Second, I have a \textbf{measurement- and debugging-driven mindset}. Whether diagnosing elusive ZooKeeper tail latencies or chasing down GPU performance regressions, I have learned to build careful experiments, instrument systems thoroughly, and let data guide design choices. Third, I am comfortable taking initiative and working independently: both the agentic-ds-ops and CUDA Proxy Player projects began as small course or side projects and grew into longer-term efforts that I drove forward.
+
+At the same time, I am aware of areas where I still need to grow. My \textbf{theoretical background}, while solid at the undergraduate level, is not yet as deep as I would like for tackling the most challenging problems in distributed algorithms or learning theory. To address this, I plan to pursue more advanced coursework and reading in areas such as randomized algorithms, probabilistic modeling, and formal methods for systems during my Ph.D.\ studies. In addition, my \textbf{publication record} is still in its early stages: aside from the soft robotics workshop paper, my systems projects are in the process of being written up. I view the Ph.D.\ as an opportunity not only to execute ambitious systems projects, but also to learn how to frame them as clear, rigorous contributions to the research community.
+
+\textbf{Fit with Duke and Prof.\ Zhuo.}
+At Duke, I see a particularly strong fit with \textbf{Prof.\ Danyang Zhuo} and the \textbf{Duke Systems Group}. His work at the intersection of \textbf{datacenter systems and machine learning systems} closely matches my interests in building reliable and efficient infrastructure for large-scale ML training and serving. Projects such as \textbf{VTC} and \textbf{Punica}, which explore fair and high-throughput LLM serving, and \textbf{Alpa}, \textbf{TeraPipe}, and \textbf{LLM.265}, which develop new parallelism dimensions and tensor compression mechanisms for large models, resonate with my experience designing the CUDA Proxy Player runtime and thinking about launch-bounded, memory-constrained inference workloads. Likewise, his work on \textbf{Phoenix}, \textbf{MCCS}, and \textbf{mRPC}---exposing unified application-level abstractions while retaining low-level control---aligns with my agentic-ds-ops project, where I aim to make coordination services more observable and automatically controllable in production-like settings. I would be excited to contribute to this line of research, for example by leveraging noisy telemetry to drive adaptive scheduling and collective communication choices for ML jobs, or by co-designing serving runtimes that remain robust under gray failures and workload variability. \textbf{Duke's collaborative systems environment and Prof.\ Zhuo's group} in particular provide the kind of setting I am seeking for my Ph.D.\ training.
+
+\end{document}
