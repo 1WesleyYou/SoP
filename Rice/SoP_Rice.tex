@@ -1,0 +1,117 @@
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+
+\setlength{\parskip}{8pt}
+% Linespread command allows you to change line spacing for the entire document
+\linespread{1.18}
+
+% Tweak page margins
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+
+\usepackage{natbib}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{xspace}
+\usepackage{fancyhdr}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\Hrule}{\rule{\linewidth}{0.3mm}}
+
+% Project specific macros
+\newcommand{\graphite}{GRAPHITE\xspace}
+\newcommand{\wave}{WAVE\xspace}
+
+% School specific macros
+\newcommand{\schoolShort}{Rice\xspace}
+\newcommand{\school}{Rice University\xspace}
+\newcommand{\schoolLong}{Rice University\xspace}
+
+\newcommand{\profOne}{Prof. Ryan Huang\xspace}
+\newcommand{\profTwo}{Prof. Xiaonan Huang\xspace}
+\newcommand{\profThree}{Prof. Yutong Ban\xspace}
+
+% Creates header for each page
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\header\hskip\linepagesep\vfootline\thepage}
+\newskip\linepagesep \linepagesep 5pt\relax
+\def\vfootline{%
+    \begingroup
+    	\rule[-10pt]{0.75pt}{25pt}
+    \endgroup
+}
+\def\header{%
+	\begin{minipage}[]{120pt}
+		\hfill Yuchen You
+    	\par \hfill 				% Formatting boilerplate
+    	CS, PhD, Fall 2026 			% Area, Program, Cycle, Year
+    \end{minipage}
+}
+\fancyhead[RE,LO]{Statement of Purpose | \schoolLong}
+\renewcommand\headrulewidth{0pt}
+
+\begin{document}
+
+I am applying to the PhD program in Computer Science to work on \textbf{reliable systems} at the intersection of \textbf{operating systems, distributed systems, and ML infrastructure}, with a particular interest in why complex production systems fail in subtle ways and how we can make them more \textbf{predictable, diagnosable, and mitigatable}.
+
+\textbf{Professional Plans, Career Goals, and the Role of a PhD:}
+Long term, I hope to become a systems researcher who designs \textbf{robust operating systems and distributed infrastructure} that cloud operators can rely on. I am motivated by the gap between sophisticated cloud platforms and the fragility we still see in practice--outages, SLO violations, and gray failures--and my concrete goal is to \textbf{build well-evaluated systems} that \textbf{improve SLO robustness} and make such incidents less frequent. Having already participated in real research projects and the publication process, I now want a PhD to systematically learn how to formulate open problems and organize my own research agenda--building principled abstractions, evaluating them under realistic workloads, and connecting low-level mechanisms with high-level reliability goals--so that I can eventually lead research efforts that strengthen real-world cloud infrastructure.
+
+\textbf{Research Interests: Reliable Operating, Distributed, and ML Systems}
+I am especially interested in \textbf{fail-slow} and \textbf{gray failures} in \textbf{large-scale ML training and inference}. As clusters scale to thousands of GPUs, subtle performance pathologies can quietly erode throughput and inflate tail latency without ever causing crashes. I would like to design runtime mechanisms and control planes that treat system metrics and training signals as noisy sensors for such latent failures, and adapt scheduling, checkpointing, or collective communication in response, so that clusters can detect and react before problems become visible outages.
+
+More broadly, I am drawn to \textbf{reliability} and \textbf{efficiency} questions across the systems stack that supports \textbf{large-scale ML workloads}: from distributed storage and coordination services, to communication and scheduling layers for training, to runtimes and serving systems for dynamic, launch-bounded inference. Across these topics, a unifying theme is building systems that expose practical, reliability-oriented abstractions—such as richer telemetry and control interfaces—so that complex cloud and ML infrastructure becomes more observable and diagnosable, and can support safer, more automated mitigation in production.
+
+%% Why do you wish to attend graduate school? What would you like to study? Keep it broad, details come-in later
+%% Describe 2-3 past projects that might be relevant to your research interests. (10-12 lines per project)
+% PROJECT 1: P3 - Distributed Graph Neural Network Training at Scale
+
+\textbf{Learning Reliability from Embedded Systems and Soft Robots:}
+Before focusing my research on systems, I spent several years working on embedded systems and robotics, where I often found that failures stemmed more from unreliable data and weak fault handling than from the control law itself. As an embedded developer for an autonomous sentry robot in \textbf{RoboMaster} competitions and later a research assistant in \textbf{UMich's HDRLab} with \textbf{Prof.~Xiaonan~Huang} on a modular soft robot, I worked across both low-level firmware and high-level control. I wrote firmware that connected MCUs, sensors, and actuators over CAN and $I^2C$, and implemented model-based dynamics and control code that consumed these streams. Our HDRLab project received a \textbf{best-poster award} at an \textbf{ICRA 2025 workshop}~\cite{you2025origami}. In these systems, the limiting factor was often not the controller design but the quality and robustness of the data path: sensor readings could be noisy, delayed, or intermittently corrupted. To keep the system safe and usable, I designed an explicit monitoring and metrics pipeline with filtering, sanity checks, and guards, and implemented fallbacks to redundant signals or predefined degraded-but-safe modes when data quality dropped or components failed, while tuning control gains and trajectories to remain stable under these degraded conditions. Working under tight power and timing constraints, I had to design controllers that used a limited actuation budget efficiently while still maintaining conservative safety margins and robust behavior. These experiences made reliability very concrete for me and trained me to think in terms of \textbf{observability, fault containment, and graceful degradation}. I now apply this outlook to larger-scale distributed and ML systems, which ultimately led me to study similar questions in software-based distributed infrastructure.
+
+\textbf{Agentic Operations for Failures in Distributed Systems:}
+With this perspective, I joined \textbf{UMich's OrderLab} advised by \textbf{Prof.~Ryan~Huang} to work on an ``agentic'' approach to operating \textbf{ZooKeeper} clusters under overload and network fluctuations. My primary role has been to design and implement the end-to-end experimental platform: a \textbf{feedback controller} that ingests \textbf{Prometheus} telemetry, uses \textbf{HAProxy}-based traffic shaping, and exposes a small, \textbf{Bash}-based library of unit \textbf{mitigation actions} (e.g., throttling, re-routing, and I/O limiting) with well-defined parameters and safety constraints. On top of this substrate, I built a \textbf{dedicated load generator} that drives multi-phase traffic patterns (e.g., warmup–spike–steady-state phases and randomly skewed per-node request rates across the cluster that emulate real-world hotspot and imbalance patterns) and a \textbf{simple, threshold-based static mitigator baseline}, allowing us to quantify recovery behavior by tracking throughput and p95 latency over different traffic phases. The agentic layer then adds an \textbf{LLM-based component} that periodically reads recent logs and metrics, synthesizes a short \textbf{execution plan}—a sequence of mitigation actions with concrete parameters drawn from this library—and hands this plan to the controller, which is responsible for executing the actions and evaluating their effect. In our testbed, the \textbf{static controller} detects and mitigates many \textbf{overload and crash scenarios}, restoring throughput and tail latency close to baseline across a range of injected faults. In more complex, evolving \textbf{gray-failure} settings, however, the agent uses the same signals to synthesize more \textbf{targeted mitigation plans} with tuned parameters, reducing the duration of degraded service while staying within predefined \textbf{safety limits}. This project has been my primary training in \textbf{distributed systems research}: analyzing \textbf{failure modes} in terms of mitigation effectiveness, designing \textbf{strong baselines and ablations}, and iteratively refining mechanisms and evaluation methodology with my advisor.
+
+% PROJECT 3: Graphite - Distributed Temporal Graph Processing
+\textbf{CUDA Proxy Player: Runtime Support for Launch-Bounded Inference.}
+As part of an \textbf{Advanced Operating Systems} course project and a subsequent independent follow-up, I studied efficiency bottlenecks in serving \textbf{launch-bounded GPU inference workloads}, with Mixture-of-Experts models as one motivating example. Working in a group of three, I co-designed \textbf{CUDA Proxy Player}, a \textbf{multi-path runtime} that routes each request to an eager, CUDA Graph, or persistent-kernel execution path based on workload characteristics. Profiling online decoding pipelines revealed long stretches of sub-100$\mu$s kernels separated by CPU-side gaps, confirming that kernel-launch and host orchestration overhead, rather than raw compute throughput, were the dominant bottlenecks. My main responsibility was to build the benchmarking and evaluation framework: constructing microbenchmarks and compact forward passes that span realistic expert sizes, hidden dimensions, and batch shapes, and using them to compare these execution paths under controlled traffic patterns. In this launch-bounded regime, our CUDA Graph path matches a hand-tuned fusion baseline while reducing end-to-end latency by about 24\% relative to a naive eager baseline, deepening my understanding of \textbf{GPU execution models} and training me to approach performance as a \textbf{runtime design} problem grounded in clear bottleneck analysis, \textbf{objective baselines}, and \textbf{representative workloads}.
+
+%% Non-research accomplishments (e.g. Grades, Academic Service, Work experience) (10-12 lines)
+
+% Grades
+
+% TA and Academic Service
+
+% Industry
+\textbf{Fit with \schoolShort CS and Prospective Advisors:}  \schoolShort's focus on reliable and secure systems software aligns with my goal of building dependable operating, distributed, and ML systems. I see a particularly strong fit with \textbf{Prof.~Yongle~Zhang} and also strong alignment with \textbf{Prof.~Pedro~Fonseca}. Prof. Zhang's work on production failures and fail-slow hardware faults in cloud systems directly overlaps with my interest in gray failures and SLO-driven reliability for ML training clusters; my experience treating ZooKeeper gray failures and backlog spikes as ``sensor readings'' for latent performance faults gives me a concrete starting point for his group's work on failure detection and diagnosable system design, especially in using noisy telemetry to explain SLO violations and guide mitigation. I am also excited about Prof. Fonseca's Reliable and Secure Systems Lab, particularly work on \textbf{kernel record–replay}, \textbf{kernel concurrency testing}, and \textbf{serverless runtime support}, and would like to explore how ideas from record–replay, isolation, and serverless checkpointing could be adapted to reliably reproduce and mitigate fail-slow anomalies in ML infrastructure; my background building load generators, fault-injection testbeds, and agentic control platforms would transfer naturally to this setting. Together, these groups and \schoolShort's broader systems community provide a natural home to develop a coherent research agenda on reliable, diagnosable systems for large-scale cloud and ML workloads.
+%% Summary (3-4 Lines)
+
+% Add some blank space between text and references
+% \vspace{0.125in}
+
+% References
+
+% **NOTE**: There are better ways to manage citations in LaTeX, most notably using a bibTeX. I wanted to have greater control on how citations were spaced and formatted and therefore ended up hardcoding them here. Your mileage may wary!
+
+\bibliographystyle{abbrv}
+\bibliography{paper}
+
+\end{document}
+
+% That's All Folks.
+
+% Best of luck, you got this! :)
