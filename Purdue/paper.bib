@@ -39,21 +39,6 @@ series = {HotOS '17}
   url       = {https://www.usenix.org/conference/atc25/presentation/dong}
 }
 
-@inproceedings{10.5555/3767901.3767935,
-author = {Zhang, Tianren and Gong, Sishuai and Fonseca, Pedro},
-title = {KRR: efficient and scalable kernel record replay},
-year = {2025},
-isbn = {978-1-939133-47-2},
-publisher = {USENIX Association},
-address = {USA},
-abstract = {Modern kernels are large, complex, and plagued with bugs. Unfortunately, their large size and complexity make kernel failures very challenging for developers to diagnose since failures encountered in deployment are often notoriously difficult to reproduce. Although record-replay techniques provide the powerful ability to accurately record a failed execution and deterministically replay it, enabling advanced manual and automated analysis techniques, they are inefficient and do not scale with modern I/O-intensive, concurrent workloads.This paper introduces KRR, a kernel record-replay framework that provides a highly efficient execution recording mechanism by narrowing the scope of the record and replay boundary to the kernel. Unlike previous record-replay wholestack approaches, KRR adopts a split-recorder design that employs the guest and the host to jointly record the kernel execution. Our evaluation demonstrates that KRR scales efficiently up to 8 cores, across a range of different workloads, including kernel compilation, RocksDB, and Nginx. When recording 8-core VMs that run RocksDB and kernel compilation, KRR incurs only a 1.52\texttimes{} ∼ 2.79\texttimes{} slowdown compared to native execution, while traditional whole-VM RR suffers from 8.97\texttimes{} ∼ 29.94\texttimes{} slowdown. We validate that KRR is practical and has a broad recording scope by reproducing 17 bugs across different Linux versions, including 6 non-deterministic bugs and 5 high-risk CVEs; KRR was able to record and reproduce all but one non-deterministic bug.},
-booktitle = {Proceedings of the 19th USENIX Conference on Operating Systems Design and Implementation},
-articleno = {34},
-numpages = {18},
-location = {Boston, MA, USA},
-series = {OSDI '25}
-}
-
 @inproceedings{10.1145/3600006.3613148,
 author = {Gong, Sishuai and Peng, Dinglan and Alt\i{}nb\"{u}ken, Deniz and Fonseca, Pedro and Maniatis, Petros},
 title = {Snowcat: Efficient Kernel Concurrency Testing using a Learned Coverage Predictor},
@@ -70,4 +55,19 @@ numpages = {17},
 keywords = {concurrency programming, software testing and debugging, operating systems security, kernel concurrency bugs},
 location = {Koblenz, Germany},
 series = {SOSP '23}
+}
+
+@inproceedings{10.5555/3767901.3767935,
+author = {Zhang, Tianren and Gong, Sishuai and Fonseca, Pedro},
+title = {KRR: efficient and scalable kernel record replay},
+year = {2025},
+isbn = {978-1-939133-47-2},
+publisher = {USENIX Association},
+address = {USA},
+abstract = {Modern kernels are large, complex, and plagued with bugs. Unfortunately, their large size and complexity make kernel failures very challenging for developers to diagnose since failures encountered in deployment are often notoriously difficult to reproduce. Although record-replay techniques provide the powerful ability to accurately record a failed execution and deterministically replay it, enabling advanced manual and automated analysis techniques, they are inefficient and do not scale with modern I/O-intensive, concurrent workloads.This paper introduces KRR, a kernel record-replay framework that provides a highly efficient execution recording mechanism by narrowing the scope of the record and replay boundary to the kernel. Unlike previous record-replay wholestack approaches, KRR adopts a split-recorder design that employs the guest and the host to jointly record the kernel execution. Our evaluation demonstrates that KRR scales efficiently up to 8 cores, across a range of different workloads, including kernel compilation, RocksDB, and Nginx. When recording 8-core VMs that run RocksDB and kernel compilation, KRR incurs only a 1.52\texttimes{} ∼ 2.79\texttimes{} slowdown compared to native execution, while traditional whole-VM RR suffers from 8.97\texttimes{} ∼ 29.94\texttimes{} slowdown. We validate that KRR is practical and has a broad recording scope by reproducing 17 bugs across different Linux versions, including 6 non-deterministic bugs and 5 high-risk CVEs; KRR was able to record and reproduce all but one non-deterministic bug.},
+booktitle = {Proceedings of the 19th USENIX Conference on Operating Systems Design and Implementation},
+articleno = {34},
+numpages = {18},
+location = {Boston, MA, USA},
+series = {OSDI '25}
 }
