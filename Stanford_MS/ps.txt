@@ -1,7 +1,96 @@
-I am completing a dual degree in mechanical engineering at Shanghai Jiao Tong University and computer science at the University of Michigan. My earlier schooling trained me to work steadily toward clear, exam-based goals; in college, navigating two universities with different expectations around independent study, class participation, and office hours showed me that effort alone is not enough. I was initially focused on meeting explicit requirements—submitting projects, preparing for tests—but slower to understand how to use less visible resources such as office hours, reading groups, and informal conversations with faculty. Learning to ask for guidance in a second language and to treat syllabi as starting points rather than checklists made me aware of a “hidden curriculum”: unwritten rules that are obvious to some students and invisible to others, especially those from different academic backgrounds.
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{xspace}
+\usepackage{parskip}
 
-That awareness of invisible barriers also shaped how I saw my neighborhood in Shanghai, where older residents were quietly shut out of everyday services as more of them moved into smartphone apps. I helped organize a visit to a senior activity center where we sat one-on-one with older adults, walked through essential tasks on WeChat, and practiced until they could repeat the steps on their own. Many began by apologizing for being “slow,” but their tone changed once they completed a task independently. That experience showed me that digital inequality is not only about networks or hardware; it is also about design, pacing, and whether anyone is willing to sit beside a user who has been told they do not belong.
+\singlespacing
+\setlength{\parskip}{10pt}
 
-As a teaching assistant for ENGR 1000J, an introductory course where teams build web-based games, I saw a similar pattern. Teams often centered on one or two confident programmers, while less experienced or quieter students stayed away from the code. I encouraged teams to decompose projects into small features so each member owned at least one, and I asked experienced students to explain their design decisions aloud and rotate roles. I also met one-on-one with hesitant students to implement their first feature. By the end of the term, most students could point to a part of the project they had written, and several said it was the first time they felt like contributors rather than observers. Experiences like these have taught me to care not only about who is technically capable, but also about who feels able to participate.
+% Tweak page margins
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
 
-At Stanford, I hope to contribute not only through computer-systems research but also by helping peers navigate the program with fewer hidden barriers. Studying both in Shanghai and in Ann Arbor has made me attentive to how norms around office hours, large projects, and research opportunities can exclude students who are new to systems or to this environment. Whether as a teaching assistant or as a peer, I plan to make expectations explicit, share study strategies, and help build project teams where every member owns a meaningful piece of the work so that more students can see themselves as insiders to technical communities.
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+
+\usepackage{natbib}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\Hrule}{\rule{\linewidth}{0.3mm}}
+
+% School specific macros
+\newcommand{\schoolShort}{Stanford\xspace}
+\newcommand{\school}{Stanford University\xspace}
+\newcommand{\schoolLong}{Stanford University MSCS\xspace}
+
+\newcommand{\profOne}{Prof. Ryan Huang\xspace}
+\newcommand{\profTwo}{Prof. Xiaonan Huang\xspace}
+\newcommand{\profThree}{Prof. Yutong Ban\xspace}
+
+% Header
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\header\hskip\linepagesep\vfootline\thepage}
+\newskip\linepagesep \linepagesep 5pt\relax
+\def\vfootline{%
+    \begingroup
+    	\rule[-10pt]{0.75pt}{25pt}
+    \endgroup
+}
+\def\header{%
+	\begin{minipage}[]{120pt}
+		\hfill Yuchen You
+    	\par \hfill
+    	MSCS, Fall 2026
+    \end{minipage}
+}
+\fancyhead[RE,LO]{Statement of Purpose | \schoolLong}
+\renewcommand\headrulewidth{0pt}
+
+\begin{document}
+
+\noindent\textbf{Statement of Purpose -- Stanford University MSCS}\\
+\textbf{Yuchen You -- Fall 2026}
+
+\textbf{Motivation and Goals.}
+My academic path has been shaped by one recurring question: why \textbf{systems} that seem correct in design can still become slow, fragile, or unpredictable when they meet real workloads. Through a dual degree in mechanical engineering and computer science, I have seen this both in physical robots and in distributed services. These experiences convinced me that I want to build not only software that works in idealized settings, but also the skills to reason about how \textbf{complex systems} behave at scale in practice. I am applying to the Stanford MS in Computer Science (\textbf{MSCS}) to strengthen my foundations in \textbf{systems and networking}, and to learn how modern infrastructure for data and AI is designed, implemented, and operated in a principled way.
+
+\textbf{Academic Preparation.}
+My undergraduate training has given me complementary perspectives on systems. At Shanghai Jiao Tong University, mechanical engineering and robotics courses exposed me to hardware constraints, control loops, and real-time behavior. At the University of Michigan, computer science courses in data structures and algorithms, operating systems, computer networks, and security trained me to think about \textbf{abstractions}, correctness, and resource trade-offs. In these classes, I implemented components such as user-level threading libraries, minimal pagers, basic routers and transport protocols, and secure services. Working through concurrency bugs, race conditions, and performance bottlenecks gave me confidence working close to the operating system and network stack, and taught me to treat specifications as starting points rather than guarantees.
+
+\textbf{Robotics Foundations and Reliability.}
+My robotics work has anchored this abstract understanding in concrete failure modes. On a university robotics team and later in the \textbf{HDR Lab} at Michigan, I worked on autonomous sentry robots and an origami-inspired soft robotic arm. I helped build the control stack and experimental setup for a modular, compliant manipulator, work that led to a spotlight presentation and a \textbf{best-poster recognition at an ICRA 2025 workshop}~\cite{. These systems rarely failed by crashing outright; instead, we observed drift, noisy sensors, and partial actuator or communication faults that could quietly push the arm toward unstable configurations. To keep the platform usable, I contributed to simple telemetry, health checks, and degraded-but-safe fallback modes. This experience made \textbf{reliability} feel less like an abstract property and more like a design discipline that connects software, hardware, and the physical world.
+
+\textbf{Systems and Infrastructure Experience.}
+Building on that mindset, I joined the \textbf{OrderLab} at Michigan to study how to keep coordination services stable under changing workloads. Rather than inventing new algorithms, our goal has been to prototype something that resembles what an infrastructure team could deploy. With my advisor and labmates, I helped design a feedback loop that collects metrics from standard monitoring tools, passes traffic through a proxy layer, and applies a small library of safe mitigation actions such as throttling, rerouting, or I/O limiting. I built a workload generator that drives different traffic phases---warmup, spike, and steady-state---and introduces hotspots so we can observe how the system behaves when some nodes become much busier than others. Through this project, I learned to ask questions that I expect to face again in industry: which metrics actually correlate with \textbf{user-visible problems}, how conservative automated mitigation should be, and how to tell whether a change truly improves latency and throughput rather than shifting problems elsewhere. It also taught me to design baselines carefully, to run systematic experiments instead of ad-hoc tests, and to present results with both capabilities and limitations in mind.
+
+\textbf{Performance, Measurement, and ML Inference.}
+In an \textbf{Advanced Operating Systems} course project, I had the chance to explore GPU support for \textbf{machine-learning inference}. Working with classmates, I helped design and evaluate a small runtime that can choose between different execution strategies for workloads composed of many short GPU kernels. Our goal was to understand when techniques such as batching or long-running worker kernels reduce end-to-end latency compared to straightforward dispatch. My main responsibility was to build a clean benchmarking framework: structuring representative test scenarios, scripting experiments, and analyzing the results. More than any single optimization, this project deepened my habit of treating \textbf{performance} as a problem of measurement and design. I came away with a stronger appreciation that using advanced system features responsibly requires understanding their trade-offs and validating them under realistic workloads.
+
+Across these experiences, I have gradually moved from simply completing assignments toward taking \textbf{ownership} of parts of systems: instrumenting them, deciding what to measure, debugging corner cases, and making design choices that balance performance, robustness, and complexity. The Stanford \textbf{MSCS program} is a natural next step for me to generalize these lessons and apply them to a broader range of platforms and application domains.
+
+\textbf{Stanford Fit and Curriculum.}
+Stanford’s curriculum would allow me to reinforce my foundations in systems and networking while also exploring adjacent areas that interact with modern infrastructure. I am particularly interested in project-oriented offerings such as \textbf{CS 329S (Machine Learning Systems Design)}, which emphasizes building, deploying, and monitoring real-world ML systems, and \textbf{CS 336 (Language Modeling from Scratch)}, which would deepen my understanding of large language models as demanding workloads that stress underlying systems. Just as importantly, I look forward to the broader \textbf{MSCS curriculum} in algorithms, databases, and distributed systems that would help me see how the techniques I have used in specific projects fit into a larger conceptual framework.
+
+\textbf{Collaboration and Learning Environment.}
+Beyond individual courses, I am drawn to Stanford’s culture of \textbf{collaboration} and its close connection between teaching and ongoing work in systems and machine learning. Learning in an environment shaped by faculty whose research spans data-centric ML, networking, and operating systems would influence how I frame problems, even if my role as an MS student is focused on coursework and course projects rather than full-scale research papers. I am also excited by the opportunity to learn from classmates with diverse backgrounds---some coming from strong theoretical training, others from industry---and to work on team projects that mirror the interdisciplinary nature of modern infrastructure work.
+
+\textbf{Future Plans.}
+In the long term, I hope to build and operate large-scale systems for data and ML in an industrial setting, such as serving as a \textbf{systems} or \textbf{ML-infrastructure engineer}. I want to be someone who can not only implement individual components, but also reason about how they interact under real workloads, and design mechanisms that keep services observable and dependable as they grow. The Stanford MSCS is, to me, a deliberate step in that direction: a chance to consolidate my preparation, to broaden my perspective beyond the specific platforms I have already touched, and to grow into an engineer who can help design and sustain the next generation of \textbf{reliable computing infrastructure}.
+
+\bibliographystyle{abbrv}
+\bibliography{paper}
+
+\end{document}
