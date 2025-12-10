@@ -1,0 +1,90 @@
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+\usepackage{setspace}
+
+\setlength{\parskip}{8pt}
+\doublespacing
+% Linespread command allows you to change line spacing for the entire document
+% \linespread{1.18}
+
+% Tweak page margins
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+
+\usepackage{natbib}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{xspace}
+\usepackage{fancyhdr}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\Hrule}{\rule{\linewidth}{0.3mm}}
+
+% Project specific macros
+\newcommand{\graphite}{GRAPHITE\xspace}
+\newcommand{\wave}{WAVE\xspace}
+
+% School specific macros
+\newcommand{\schoolShort}{NYU\xspace}
+\newcommand{\school}{New York University\xspace}
+\newcommand{\schoolLong}{New York University\xspace}
+
+\newcommand{\profOne}{Prof. Ryan Huang\xspace}
+\newcommand{\profTwo}{Prof. Xiaonan Huang\xspace}
+\newcommand{\profThree}{Prof. Yutong Ban\xspace}
+
+% Creates header for each page
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\header\hskip\linepagesep\vfootline\thepage}
+\newskip\linepagesep \linepagesep 5pt\relax
+\def\vfootline{%
+    \begingroup
+    	\rule[-10pt]{0.75pt}{25pt}
+    \endgroup
+}
+\def\header{%
+	\begin{minipage}[]{120pt}
+		\hfill Yuchen You
+    	\par \hfill 				% Formatting boilerplate
+    	CS, PhD, Fall 2026 			% Area, Program, Cycle, Year
+    \end{minipage}
+}
+\fancyhead[RE,LO]{Personal History Statement | \schoolLong}
+\renewcommand\headrulewidth{0pt}
+
+\begin{document}
+
+\textbf{Background and Early Educational Context.}
+I am completing dual bachelor's degrees in mechanical engineering at Shanghai Jiao Tong University and computer science at the University of Michigan. My earlier schooling emphasized high-stakes exams and clear grading rubrics. That training gave me discipline and persistence, but when I entered two research universities with different expectations around independent study, class participation, and office hours, I had to learn a different set of skills. Learning to ask for help in a second language, to read syllabi as starting points rather than checklists, and to seek out informal resources such as reading groups was not at all automatic for me; it required repeatedly stepping outside habits that had worked for many years. These transitions made me aware of how much “hidden curriculum” there is in higher education, and they motivated me to pursue graduate study not only to deepen my knowledge of computer systems, but also to help make that curriculum more visible and accessible to others.
+
+\textbf{Learning to Be Persistent and Resourceful.}
+One turning point was an operating systems course where I initially treated the projects as the whole course and did poorly on the first midterm. Instead of accepting that score as a fixed measure of my ability, I treated it as feedback on my approach. I began attending office hours regularly, comparing notes with classmates who had different study strategies, and building weekly checklists for readings and practice problems. Balancing this with a second major and research required careful time management and a willingness to adjust when something was not working. This adjustment period appears in a few early grades on my transcript, but it also marks the point where I learned to navigate steep learning curves by actively seeking resources, asking questions early, and iterating on my strategies rather than simply working longer hours. Going through this process myself is one reason I want to be a graduate student: I know how transformative it can be when someone demystifies expectations and helps you see that you can, in fact, learn the material.
+
+\textbf{Teaching, Teamwork, and Inclusive Learning.}
+My experiences as a \textbf{teaching assistant} and teammate have also shaped how I hope to contribute to a diverse academic community. At Shanghai Jiao Tong University, I served as a TA for an introductory software engineering course where some students had never programmed before while others already had substantial experience. In early project meetings, confident students tended to take on the core coding tasks, while quieter students—often those less confident in their English or background—drifted toward documentation roles. I encouraged teams to rotate responsibilities and designed check-in questions that required every member to explain part of the design or code. In office hours, I made a point of inviting questions from students who seemed hesitant to speak up. Watching several of them progress from ``I am not a coding person'' to successfully implementing key modules was one of the most rewarding parts of my undergraduate years, and it convinced me that I want my future in computer science to combine research with teaching and mentoring.
+
+\textbf{Community Service and Digital Inclusion.}
+Outside the classroom, I joined a student volunteer group that worked with seniors at a local community center in Shanghai. Many of them relied on smartphones for essential services but were unfamiliar with touch interfaces or app permissions. Our visits were simple: we would sit next to each senior, unlock the phone together, open the right WeChat mini-program, and walk through tasks like reserving a hospital appointment, often repeating the same steps patiently. Over time, we saw more participants unlock their phones and complete these tasks with only a brief prompt, and a few began showing their neighbors how to do the same. This work showed me how digital systems can unintentionally exclude people and how much of a difference patient, one-on-one explanations can make. It also reminded me that technical skill alone is not enough; communication and empathy are equally important, and that the way we design and explain systems affects who feels able to use them.
+
+\textbf{Future Contributions to NYU's Community.}
+These experiences have prepared me to be both persistent and resourceful in graduate school and to support others who are navigating unfamiliar systems, whether academic, cultural, or technical. At \school, I hope not only to deepen my research in operating and distributed systems, but also to \textbf{contribute to a community} that brings together students from many countries, disciplines, and life experiences. NYU’s urban, international environment is an especially appealing place for me to keep learning how to navigate and demystify the “hidden curriculum” for other students. I would like to continue mentoring students who are encountering research universities and U.S. graduate education for the first time, help design inclusive project practices in systems courses and reading groups, and participate in outreach in New York City—whether through K–12 or community programs—that makes computing more accessible to people who might otherwise feel excluded from it. Together, these goals are what motivate me to pursue a PhD: I want to pair rigorous systems research with teaching and outreach, building bridges not only between theory and practice, but also between the people who build complex systems and the communities that depend on them.
+
+\end{document}
+
+% That's All Folks.
+
+% Best of luck, you got this! :)
