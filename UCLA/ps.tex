@@ -1,0 +1,84 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+\usepackage{setspace}
+
+\setlength{\parskip}{0pt}
+\singlespacing
+% Linespread command allows you to change line spacing for the entire document
+% \linespread{1.18}
+
+% Tweak page margins
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+
+\usepackage{natbib}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{xspace}
+\usepackage{fancyhdr}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\Hrule}{\rule{\linewidth}{0.3mm}}
+
+% Project specific macros
+\newcommand{\graphite}{GRAPHITE\xspace}
+\newcommand{\wave}{WAVE\xspace}
+
+% School specific macros
+\newcommand{\schoolShort}{UCLA\xspace}
+\newcommand{\school}{University of California, Los Angeles\xspace}
+\newcommand{\schoolLong}{University of California, Los Angeles\xspace}
+
+\newcommand{\profOne}{Prof. Ryan Huang\xspace}
+\newcommand{\profTwo}{Prof. Xiaonan Huang\xspace}
+\newcommand{\profThree}{Prof. Yutong Ban\xspace}
+
+% Creates header for each page
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\header\hskip\linepagesep\vfootline\thepage}
+\newskip\linepagesep \linepagesep 5pt\relax
+\def\vfootline{%
+    \begingroup
+    	\rule[-10pt]{0.75pt}{25pt}
+    \endgroup
+}
+\def\header{%
+	\begin{minipage}[]{120pt}
+		\hfill Yuchen You
+    	\par \hfill 				% Formatting boilerplate
+    	MSCS, Fall 2026 			% Area, Program, Cycle, Year
+    \end{minipage}
+}
+\fancyhead[RE,LO]{Personal History Statement | \schoolLong}
+\renewcommand\headrulewidth{0pt}
+
+\begin{document}
+
+\paragraph{Crossing Academic Cultures and Learning to Ask for Help.}
+I am completing two bachelor's degrees in Mechanical Engineering at Shanghai Jiao Tong University and Computer Science at the University of Michigan. Moving between two academic cultures revealed how much ``hidden curriculum'' exists in higher education---unwritten expectations about class participation, office hours, and how to learn from open-ended reading lists. My earlier schooling emphasized high-stakes exams and explicit rubrics, which gave me discipline, but it did not train me to proactively seek informal resources or to ask questions in a second language. A concrete barrier came early in an operating systems course: I over-focused on implementation and underestimated the exam’s emphasis on concepts and reasoning. I treated that mismatch as feedback on my approach, not my ability. I began attending office hours weekly, formed a small study group to compare strategies, and built a routine of reading checkpoints and practice problems. Balancing this adjustment with a second major and research taught me to recover from setbacks by iterating on process and seeking support early---not simply working longer hours.
+
+\paragraph{Inclusive Teaching and Structured Teamwork.}
+As a \textbf{teaching assistant} for an \textbf{introductory software engineering course} at SJTU, I saw how team structure can widen or narrow participation: confident students often claimed core coding tasks, while quieter teammates drifted toward documentation or ``safe'' roles. I tried to make contribution pathways more visible and more evenly distributed. In project meetings, I encouraged teams to rotate responsibilities (implementation, testing, debugging, and writing) and used check-in prompts that required every member to explain one design decision or piece of code. In office hours, I intentionally invited questions from students who seemed hesitant to speak up, and I learned to normalize confusion as part of learning rather than a sign of mismatch. Watching students move from ``I'm not a coding person'' to implementing key modules convinced me that inclusion is often a matter of concrete practices---clear expectations, psychological safety, and structured collaboration---not slogans.
+
+\paragraph{Community Service, Digital Inclusion, and Contributions at UCLA.}
+I have also volunteered at a community center in Shanghai helping seniors use smartphones for essential tasks such as booking hospital appointments through apps and WeChat mini-programs. Many participants were anxious about touch interfaces, permissions, or making irreversible mistakes, so our work often meant patient, repeated walkthroughs and small confidence-building steps. At UCLA, I would bring the same mindset to research groups, reading groups, and course communities: make expectations explicit, create low-friction pathways to ask questions, and build collaboration norms that help newcomers participate fully. For example, I would like to help organize a newcomer-friendly onboarding process for reading groups---sharing ``how to read systems papers'' templates, hosting low-stakes weekly discussion sessions, and pairing first-time participants with peer buddies. These perspectives align with UCLA's Principles of Community---respect, inclusion, and open exchange across backgrounds---and I hope to contribute through mentoring, peer onboarding, and outreach that expands access to computing.
+
+\end{document}
+
+% That's All Folks.
+
+% Best of luck, you got this! :)
