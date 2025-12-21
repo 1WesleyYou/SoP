@@ -5,3 +5,51 @@
   year      = {2025},
   month     = may
 }
+
+@inproceedings{10.1145/3102980.3103005,
+author = {Huang, Peng and Guo, Chuanxiong and Zhou, Lidong and Lorch, Jacob R. and Dang, Yingnong and Chintalapati, Murali and Yao, Randolph},
+title = {Gray Failure: {T}he {A}chilles' {H}eel of {C}loud-{S}cale {S}ystems},
+year = {2017},
+isbn = {9781450350686},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3102980.3103005},
+doi = {10.1145/3102980.3103005},
+abstract = {Cloud scale provides the vast resources necessary to replace failed components, but this is useful only if those failures can be detected. For this reason, the major availability breakdowns and performance anomalies we see in cloud environments tend to be caused by subtle underlying faults, i.e., gray failure rather than fail-stop failure. In this paper, we discuss our experiences with gray failure in production cloud-scale systems to show its broad scope and consequences. We also argue that a key feature of gray failure is differential observability: that the system's failure detectors may not notice problems even when applications are afflicted by them. This realization leads us to believe that, to best deal with them, we should focus on bridging the gap between different components' perceptions of what constitutes failure.},
+booktitle = {Proceedings of the 16th Workshop on Hot Topics in Operating Systems},
+pages = {150-155},
+numpages = {6},
+location = {Whistler, BC, Canada},
+series = {HotOS '17}
+}
+
+@inproceedings {298707,
+author = {Hayley LeBlanc and Nathan Taylor and James Bornholt and Vijay Chidambaram},
+title = {{SquirrelFS}: using the {R}ust compiler to check file-system crash consistency},
+booktitle = {18th USENIX Symposium on Operating Systems Design and Implementation (OSDI 24)},
+year = {2024},
+isbn = {978-1-939133-40-3},
+address = {Santa Clara, CA},
+pages = {387--404},
+url = {https://www.usenix.org/conference/osdi24/presentation/leblanc},
+publisher = {USENIX Association},
+month = jul
+}
+
+@inproceedings{10.1145/3452296.3472912,
+author = {Arun, Venkat and Arashloo, Mina Tahmasbi and Saeed, Ahmed and Alizadeh, Mohammad and Balakrishnan, Hari},
+title = {Toward formally verifying congestion control behavior},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472912},
+doi = {10.1145/3452296.3472912},
+abstract = {The diversity of paths on the Internet makes it difficult for designers and operators to confidently deploy new congestion control algorithms (CCAs) without extensive real-world experiments, but such capabilities are not available to most of the networking community. And even when they are available, understanding why a CCA underperforms by trawling through massive amounts of statistical data from network connections is challenging. The history of congestion control is replete with many examples of surprising and unanticipated behaviors unseen in simulation but observed on real-world paths. In this paper, we propose initial steps toward modeling and improving our confidence in a CCA's behavior. We have developed CCAC, a tool that uses formal verification to establish certain properties of CCAs. It is able to prove hypotheses about CCAs or generate counterexamples for invalid hypotheses. With CCAC, a designer can not only gain greater confidence prior to deployment to avoid unpleasant surprises, but can also use the counterexamples to iteratively improvetheir algorithm. We have modeled additive-increase/multiplicative-decrease (AIMD), Copa, and BBR with CCAC, and describe some surprising results from the exercise.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {1–16},
+numpages = {16},
+keywords = {WAN transport, congestion control, formal verification},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
