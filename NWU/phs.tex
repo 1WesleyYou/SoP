@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+
+\setlength{\parskip}{8pt}
+% Linespread command allows you to change line spacing for the entire document
+\linespread{1.18}
+
+% Tweak page margins
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+
+\usepackage{natbib}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{xspace}
+\usepackage{fancyhdr}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\Hrule}{\rule{\linewidth}{0.3mm}}
+
+% Project specific macros
+\newcommand{\graphite}{GRAPHITE\xspace}
+\newcommand{\wave}{WAVE\xspace}
+
+% School specific macros
+\newcommand{\schoolShort}{NU\xspace}
+\newcommand{\school}{Northwestern University\xspace}
+\newcommand{\schoolLong}{Northwestern University\xspace}
+
+\newcommand{\profOne}{Prof. Ryan Huang\xspace}
+\newcommand{\profTwo}{Prof. Xiaonan Huang\xspace}
+\newcommand{\profThree}{Prof. Yutong Ban\xspace}
+
+% Creates header for each page
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\header\hskip\linepagesep\vfootline\thepage}
+\newskip\linepagesep \linepagesep 5pt\relax
+\def\vfootline{%
+    \begingroup
+    	\rule[-10pt]{0.75pt}{25pt}
+    \endgroup
+}
+\def\header{%
+	\begin{minipage}[]{120pt}
+		\hfill Yuchen You
+    	\par \hfill 				% Formatting boilerplate
+    	MSCS, Fall 2026 			% Area, Program, Cycle, Year
+    \end{minipage}
+}
+\fancyhead[RE,LO]{Personal History Statement | \schoolLong}
+\renewcommand\headrulewidth{0pt}
+
+\begin{document}
+
+\noindent
+I grew most as a leader when I served as a teaching assistant for an introductory software engineering course. Early on, I noticed a recurring pattern in team-based projects: confident students quickly took ownership of core coding decisions, while quieter or less experienced classmates drifted into ``safe'' tasks and spoke less over time. I realized that helping students learn wasn't only about answering technical questions---it was also about shaping a team environment where everyone could practice real engineering work.
+
+\par\noindent
+To address this, I introduced lightweight structure: role rotation so each student owned a meaningful component at least once; short, weekly check-ins where every member had to explain one design choice; and ``pair-debugging'' sessions that normalized asking for help. I also changed how I gave feedback---focusing on concrete next steps and celebrating small wins to build confidence.
+
+\par\noindent
+By the end of the term, students who were initially hesitant began leading demos, proposing architectures, and teaching teammates. That experience changed my professional mindset: I want to build systems, but I also want to build communities where people feel capable of doing hard things together. At Northwestern, I hope to keep mentoring in courses, project teams, and student groups in the same spirit.
+
+\end{document}
+
+% That's All Folks.
+
+% Best of luck, you got this! :)
